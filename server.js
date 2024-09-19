@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const tasksRouter = require('./routes/tasks'); // Importa las rutas de tareas
+const tasksRouter = require('./routes/tasks');
+const client = require('./db'); // Importa la conexión a la base de datos
 
 const app = express();
 const port = 3000;
