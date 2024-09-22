@@ -1,0 +1,69 @@
+/* Estilo general */
+body {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto gris oscuro para mejor contraste */
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Tamaño base */
+}
+
+/* Encabezados */
+h1 {
+    color: #0056b3; /* Azul más oscuro para el encabezado */
+    font-size: 2em; /* Encabezado más grande */
+    margin-bottom: 1rem; /* Espacio abajo del encabezado */
+}
+
+/* Estilos para formularios */
+.form-group {
+    margin-bottom: 1.5rem; /* Espacio entre formularios */
+}
+
+.form-control {
+    font-size: 1rem; /* Tamaño legible para formularios */
+}
+
+/* Botón principal */
+.btn-primary {
+    background-color: #007bff; /* Azul */
+    border-color: #007bff;
+    transition: background-color 0.3s, border-color 0.3s;
+    color: #ffffff; /* Texto blanco en el botón */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color en hover */
+    border-color: #004085;
+}
+
+/* Enfoque visible */
+.btn:focus, .form-control:focus {
+    outline: 3px solid #0056b3; /* Resaltar el enfoque */
+    outline-offset: 2px;
+}
+
+/* Lista de tareas */
+.list-group-item {
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef; /* Cambio en hover */
+}
+
+.list-group-item:focus {
+    background-color: #d1ecf1; /* Fondo diferente al enfocar */
+}
+
+/* Estilo para mensajes */
+#message {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Estilo para tareas completadas */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+    background-color: #d1ecf1; /* Fondo más claro para tareas completadas */
+}

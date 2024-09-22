@@ -4,14 +4,14 @@ const router = express.Router();
 
 // **Agregar Tarea**
 router.post('/', async (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, assignee, provider } = req.body;
   if (!name) {
     return res.status(400).json({ error: 'Name is required' });
   }
   try {
     const result = await db.query(
-      'INSERT INTO tasks (name, description) VALUES ($1, $2) RETURNING *',
-      [name, description]
+      'INSERT INTO tasks (name, description, assignee, provider) VALUES ($1, $2, $3, $4) RETURNING *',
+      [name, description, assignee, provider]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
@@ -32,28 +32,30 @@ router.get('/', async (req, res) => {
 });
 
 // **Actualizar Tarea**
+// **Actualizar Tarea**
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { name, description, completed } = req.body;
+  const { name, description, assignee, provider } = req.body;
 
   if (!name) {
-    return res.status(400).json({ error: 'Name is required' });
+      return res.status(400).json({ error: 'Name is required' });
   }
 
   try {
-    const result = await db.query(
-      'UPDATE tasks SET name = $1, description = $2, completed = $3 WHERE id = $4 RETURNING *',
-      [name, description, completed, id]
-    );
-    if (result.rowCount === 0) {
-      return res.status(404).json({ error: 'Task not found' });
-    }
-    res.json(result.rows[0]);
+      const result = await db.query(
+          'UPDATE tasks SET name = $1, description = $2, assignee = $3, provider = $4 WHERE id = $5 RETURNING *',
+          [name, description, assignee, provider, id]
+      );
+      if (result.rowCount === 0) {
+          return res.status(404).json({ error: 'Task not found' });
+      }
+      res.json(result.rows[0]);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Error updating task' });
+      console.error(err);
+      res.status(500).json({ error: 'Error updating task' });
   }
 });
+
 
 // **Eliminar Tarea**
 router.delete('/:id', async (req, res) => {
