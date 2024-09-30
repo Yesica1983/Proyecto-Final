@@ -23,7 +23,7 @@ $(document).ready(function() {
 
         // Enviar la tarea a la API
         $.ajax({
-            url: '/api/tasks',
+            url: 'http://localhost:3000/api/tasks', 
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(newTask),
@@ -46,10 +46,12 @@ $(document).ready(function() {
                 $('#message').text('Tarea enviada con éxito.').removeClass('d-none');
                 setTimeout(() => $('#message').addClass('d-none'), 3000);
             },
-            error: function() {
+            error: function(xhr) {
+                console.error(xhr.responseText); // Muestra el error en la consola
                 $('#message').text('Error al enviar la tarea.').removeClass('d-none');
                 setTimeout(() => $('#message').addClass('d-none'), 3000);
             }
+            
         });
 
         // Limpiar el formulario
@@ -73,10 +75,12 @@ $(document).ready(function() {
     $('#task-list').on('click', '.delete-task', function() {
         const taskItem = $(this).closest('li');
         const taskId = taskItem.data('id');
+console.log(taskId); // Verifica que sea el ID correcto
+
 
         // Enviar solicitud para eliminar la tarea
         $.ajax({
-            url: `/api/tasks/${taskId}`,
+            url: `http://localhost:3000/api/tasks/${taskId}`,
             type: 'DELETE',
             success: function() {
                 taskItem.remove();

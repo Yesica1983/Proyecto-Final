@@ -10,22 +10,25 @@
 <body>
     <div class="container mt-4">
         <div id="message" class="alert alert-success d-none" role="alert"></div>
-
         <h1 class="mb-4">Lista de Tareas</h1>
 
         <!-- Formulario para agregar nuevas tareas -->
         <form id="task-form" class="mb-4">
             <div class="form-group">
+                <label for="task-name">Nombre de la tarea</label>
                 <input type="text" id="task-name" class="form-control" placeholder="Nombre de la tarea" required>
             </div>
             <div class="form-group">
+                <label for="task-description">Descripción de la tarea</label>
                 <textarea id="task-description" class="form-control" placeholder="Descripción de la tarea"></textarea>
             </div>
             <div class="form-group">
-                <input type="text" id="task-assignee" class="form-control" placeholder="Asignar a (nombre del empleado, por ejemplo, Juan Pérez)">
+                <label for="task-assignee">Asignar a</label>
+                <input type="text" id="task-assignee" class="form-control" placeholder="Nombre del empleado (ej. Pedro Castro)">
             </div>
             <div class="form-group">
-                <input type="text" id="task-provider" class="form-control" placeholder="Proveedor (nombre del proveedor, por ejemplo, Distribuciones XYZ)">
+                <label for="task-provider">Proveedor</label>
+                <input type="text" id="task-provider" class="form-control" placeholder="Nombre del proveedor (ej. Makro)">
             </div>
             <button type="submit" class="btn btn-primary">Agregar Tarea</button>
         </form>
