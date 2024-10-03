@@ -1,16 +1,12 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Importa cors
+const cors = require('cors');
 
 const app = express(); // Inicializa la aplicación Express
 const port = 3000;
 
 // Middleware para manejar CORS
 app.use(cors()); // Permitir CORS para todas las rutas
-
-// Configura Express para servir archivos estáticos desde la carpeta 'public'
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware para manejar JSON
 app.use(bodyParser.json());
@@ -21,9 +17,9 @@ const tasksRouter = require('./routes/tasks');
 // Usar las rutas de tareas
 app.use('/api/tasks', tasksRouter);
 
-// Ruta para la página principal
+// Opción: Mensaje en la ruta raíz
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.send('API funcionando');
 });
 
 // Inicia el servidor
