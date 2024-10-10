@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tareas</title>
+    <title>Lista de Tareas - Tienda de Zapatillas</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container mt-4">
-        <div id="message" class="alert alert-success d-none" role="alert"></div>
-        <h1 class="mb-4">Lista de Tareas</h1>
+        <div id="message" class="alert alert-success d-none" role="alert" aria-live="assertive"></div>
+        <h1 class="mb-4">Lista de Tareas - Tienda de Zapatillas</h1>
 
         <!-- Formulario para agregar nuevas tareas -->
         <form id="task-form" class="mb-4">
             <div class="form-group">
-                <label for="task-name">Nombre de la tarea</label>
-                <input type="text" id="task-name" class="form-control" placeholder="Nombre de la tarea" required>
+                <label for="task-name">Nombre de la tarea <span class="text-danger">*</span></label>
+                <input type="text" id="task-name" class="form-control" placeholder="Nombre de la tarea" required aria-required="true">
             </div>
             <div class="form-group">
                 <label for="task-description">Descripción de la tarea</label>
@@ -43,4 +43,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
 </body>
-</html>
+</html>s

@@ -1,57 +1,33 @@
-/* Estilo general */
-body {
-    background-color: #ffffff; /* Fondo blanco */
-    color: #333333; /* Texto gris oscuro para mejor contraste */
-    font-family: Arial, sans-serif;
-    font-size: 16px; /* Tamaño base */
-}
-
-/* Encabezados */
-h1 {
-    color: #0056b3; /* Azul más oscuro para el encabezado */
-    font-size: 2em; /* Encabezado más grande */
-    margin-bottom: 1rem; /* Espacio abajo del encabezado */
-}
-
-/* Estilos para formularios */
-.form-group {
-    margin-bottom: 1.5rem; /* Espacio entre formularios */
-}
-
-.form-control {
-    font-size: 1rem; /* Tamaño legible para formularios */
-}
-
 /* Botón principal */
 .btn-primary {
     background-color: #007bff; /* Azul */
     border-color: #007bff;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
     color: #ffffff; /* Texto blanco en el botón */
+    font-weight: bold; /* Negrita para el texto del botón */
+    padding: 0.5rem 1.5rem; /* Espaciado interno */
+    border-radius: 0.5rem; /* Bordes redondeados */
 }
 
-.btn-primary:hover {
-    background-color: #0056b3; /* Color en hover */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #0056b3; /* Color en hover y enfoque */
     border-color: #004085;
-}
-
-/* Enfoque visible */
-.btn:focus, .form-control:focus {
-    outline: 3px solid #0056b3; /* Resaltar el enfoque */
-    outline-offset: 2px;
+    transform: translateY(-2px); /* Levantar un poco al pasar el mouse */
 }
 
 /* Lista de tareas */
 .list-group-item {
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+    border: 1px solid #dee2e6; /* Añadir borde a las tareas */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    padding: 1rem; /* Espacio interno */
 }
 
-.list-group-item:hover {
-    background-color: #e9ecef; /* Cambio en hover */
-}
-
+.list-group-item:hover,
 .list-group-item:focus {
-    background-color: #d1ecf1; /* Fondo diferente al enfocar */
+    background-color: #e9ecef; /* Cambio en hover y enfoque */
+    transform: translateY(-2px); /* Levantar un poco al pasar el mouse */
 }
 
 /* Estilo para mensajes */
@@ -59,11 +35,69 @@ h1 {
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
+    background-color: #d4edda; /* Fondo verde claro para mensajes de éxito */
+    color: #155724; /* Texto verde oscuro */
+    border: 1px solid #c3e6cb; /* Borde verde más claro */
+    animation: fadeIn 0.5s; /* Animación al aparecer */
+}
+
+/* Animación para mensajes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Estilo para tareas completadas */
 .completed {
     text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.6;
     background-color: #d1ecf1; /* Fondo más claro para tareas completadas */
 }
+
+/* Mejoras de accesibilidad */
+button:disabled {
+    background-color: #6c757d; /* Color gris para botones deshabilitados */
+    color: #fff; /* Texto blanco */
+}
+
+.btn-success {
+    margin-left: 10px; /* Espacio entre botones */
+}
+
+/* Espaciado adicional para listas */
+#task-list {
+    margin-top: 1rem; /* Espacio encima de la lista de tareas */
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 800px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 2rem; /* Espacio interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo para elementos de navegación */
+nav {
+    background-color: #007bff; /* Azul para la barra de navegación */
+    padding: 1rem; /* Espacio interno */
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+nav a {
+    color: #ffffff; /* Texto blanco en los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Mejora en la legibilidad de los mensajes de error */
+.error-message {
+    color: #dc3545; /* Color rojo para mensajes de error */
+    font-weight: bold; /* Negrita para destacar el mensaje */
+}
+
