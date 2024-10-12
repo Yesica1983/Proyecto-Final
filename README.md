@@ -1,5 +1,3 @@
-
-
 # API de Gestión de Tareas - Tienda de Zapatillas
 
 ## Descripción
@@ -30,7 +28,7 @@ que incluyen una descripción, un nombre y un proveedor. Las tareas se envían d
 
 ## Endpoints
 
-Aquí hay una lista de los principales endpoints de la API:
+Esta es una lista de los principales endpoints de la API:
 
 - `POST /tareas`: Agregar una nueva tarea (enviada desde el frontend)
 - `GET /tareas`: Obtener todas las tareas
@@ -40,18 +38,19 @@ Aquí hay una lista de los principales endpoints de la API:
 
 ## Pasos para Acceder a la API
 
-    1 **Clonar el Repositorio**:
+1 **Clonar el Repositorio**:
    ```bash
       git clone https://github.com/Yesica1983/Proyecto-Final.git
        cd Proyecto-Final
 2  ** Instalar Dependencias:
               npm install
-           3  ** Configurar la Base de Datos: Asegúrate de tener PostgreSQL corriendo y configurado según el modelo de datos.
-            
-           4**   Iniciar el Servidor Backend:
+
+3  ** Configurar la Base de Datos: Asegúrate de tener PostgreSQL corriendo y configurado según el modelo de datos.
+
+4**   Iniciar el Servidor Backend:
                    npm start
              
-            5** Acceder a la Aplicación Frontend: Abre tu navegador y visita   
+5** Acceder a la Aplicación Frontend: Abre tu navegador y visita   
                        http://localhost:3500.
 
-             6** Interacción con la API: Utiliza Postman o cURL para probar los endpoints de la API.
+6** Interacción con la API: Utiliza Postman o cURL para probar los endpoints de la API.
